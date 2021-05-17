@@ -1,0 +1,642 @@
+<!-- 
+
+    Created by dheerendra kushwaha
+    
+                    &
+    
+            Sandeep Kushwaha 
+ 
+ 
+ 
+ -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>mymusic</title>
+
+<link       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">  
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2? rel="stylesheet">
+
+<style>
+/* Created by Sandeep Kushwaha */
+
+/* Created by dheerendra kushwaha */
+
+body {
+    margin:0;
+    padding:0;
+    font-family: 'Poppins', sans-serif;
+
+}
+.container{
+    min-height:100vh;
+    width:100%;
+}
+#start {
+    height:100vh;
+    width:100%;
+    background:#e3edf7;
+    align-items:center ;
+}
+#start img {
+    margin-left:10%;
+    height:200px;
+    width:300px;
+}
+.txt{
+    height:200px;
+    width:300px;
+    margin-left:10%;
+    text-align:center;
+    line-height:200px;
+    font-family: 'Oswald', sans-serif;
+    font-size:3em;
+    background: -webkit-linear-gradient( #96deda, #50c9c3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sbtn {
+    width:300px;
+    height:50px;
+    position:absolute;
+    bottom:40px;
+    left:8%;
+    background:#FF3399;
+    color:#fff;
+    border-radius:8px;
+    border:1px solid #fff;
+}
+.sbtn p{
+    text-align:center;
+    font-size:20px;
+    font-weight:500;
+    letter-spacing:2px;
+    font-family: 'Lobster', cursive;
+    margin:10px;
+    color:#fff;
+}
+.fa-angle-right{
+    position:absolute;
+    right:20px;
+    font-weight:1000;
+}
+#main{
+    min-height:100vh;
+    width:100%;
+    display:none;
+}
+#nav{
+    height:60px;
+    width:100%;
+    background:linear-gradient( #50c9c3, #96deda);
+    position:fixed ;
+    top:0;
+    z-index:1;
+}
+.nav{
+    height:100%;
+    width:120px;
+    float:left;
+    color:#e3edf7;
+    font-family: 'Lobster', cursive;
+    font-size:25px;
+    align-items:center ;
+    text-align:center ;
+    line-height:60px;
+    font-weight:1000;
+    
+}
+.nav img{
+    height:40px;
+    width:40px;
+    border-radius:50%;
+    padding:10px 0px;
+}
+#manu{
+    height:100vh;
+    width:250px;
+    position:fixed;
+    top:0px;
+    background:#fff;
+    z-index:5;
+    display:none;
+}
+.profile{
+    height:200px;
+    width:90%;
+    padding:5%;
+    background:linear-gradient( #50c9c3, #96deda);
+    color:#fff;
+    font-size:25px;
+}
+.profile i{
+    position:absolute ;
+    top:20px;
+    right:20px;
+    color:#FFF;
+    font-size:25px;
+}
+.setting{
+    height:300px;
+    width:100%;
+}
+.setting ul li{
+    list-style-type:none;
+    height:50px;
+    font-size:25px;
+    align-items:center ;
+    text-align:center ;
+    color:#96deda;
+}
+.setting ul li:active{
+    color:#FF3399;
+    font-size:20px;
+}
+
+
+
+
+.footer{
+    height:60px;
+    width:100%;
+    position:fixed ;
+    top:90vh;
+    z-index:1;
+    color:#e3edf7;
+    font-size:25px;
+    padding:5px;
+    background:linear-gradient( #96deda, #50c9c3);
+}
+.footer i{
+    margin:3% 8%;
+}
+.footer i:active{
+    color:#FF3399;
+    font-size:20px;
+}
+#searchbox{
+    height:100vh;
+    width:100%;
+}
+#input{
+    height:12%;
+    width:96%;
+    padding:2%;
+    border-bottom:1px solid #ddd;
+}
+input{
+    border:none;
+    color:#666;
+    height:100%;
+    width:100%;
+    outline:0;
+    font-size:20px;
+}
+#lstsearch{
+    height:80%;
+    width:96%;
+    padding:2%;
+    font-size:20px;
+    color:#ddd;
+}
+#lstsearch p:active{
+    color:#000;
+}
+
+.player{
+    height:330px;
+    width:100%;
+    margin-top:70px;
+    position:fixed ;
+    
+}
+
+.track-art{
+    height:200px;
+    width:200px;
+    margin:5px auto;
+    background-image:url('https://i.ibb.co/swGWJbW/MUSIC-Jee-Ni-Karda-From-1620866774284.jpg');
+    background-size:100% 100%;
+}
+.track-art img{
+    height:100%;
+    width:100%;
+}
+.track-name{
+    height:50px;
+    width:100%;
+    text-align:center ;
+    margin:0px;
+    opacity: 0.8;
+}
+.track-artist{
+    height:50px;
+    width:100%;
+    text-align:center ;
+    margin-top:-20px;
+    opacity: 0.8;
+}
+.buttons {
+  width:100%;
+  height:60px;
+  align-items: center;
+  margin-top:180px;
+  margin-left:25px;
+  position:fixed;
+}
+ 
+.playpause-track{
+  float:left;
+  padding:0px 25px;
+  opacity: 0.8;
+  transition: opacity .2s;
+}
+.prev-track,
+.next-track {
+  float:left;
+  padding: 25px;
+  opacity: 0.8;
+  transition: opacity .2s;
+}
+ 
+/* Change the opacity when mouse is hovered */
+.playpause-track:hover,
+.prev-track:hover,
+.next-track:hover {
+
+  opacity: 1.0;
+}
+.now-playing{
+    height:30px;
+    width:100%;
+    text-align:center ;
+    margin:0px;
+    opacity: 0.8;
+
+}
+</style>
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous">
+</script>
+</head>
+<body>
+<div class="container">
+  <div id="start">
+   <img src="https://i.ibb.co/Hrhm4nd/headphone-1990516-1280.png">
+  <div class="txt"> <i class="fa fa-music"></i> MUSIC</div>
+  <div class="sbtn" onclick="main()"><p>Start<i class="fa fa-angle-right"></i></p></div>
+   </div>
+  <div id="main">
+  <div id="nav">
+  <div class="nav"><i class="fa fa-bars" onclick="manu()"></i></div>
+       <div class="nav">Music</div>
+       <div class="nav">
+       <img src="https://i.ibb.co/L9NYwqD/images-2.png">
+       </div>
+     </div>
+  <div id="manu">
+  <div class="profile">
+  <img src="https://i.ibb.co/L9NYwqD/images-2.png" height="100px" style="border-radius:50%">
+<i class="fa fa-close"  onclick="clos()"></i>
+  <p>Hello!</p>
+         </div>
+  <div class="setting">
+    <ul>
+     <li><i class="fa fa-download">Download</i></li>
+     <li><i class="fa fa-rss">Feedback</i></li>
+     <li><i class="fa fa-cog">Settings</i></li>
+     <li><i class="fa fa-language">Language</i></li>
+     <li><i class="fa fa-sign-out">Sign-out</i></li>
+             </ul>
+         </div>
+     </div>
+  
+  <!--PLAYER-->
+  
+  <div class="player">
+      <div class="now-playing"></div>
+      <div class="track-art"></div>
+      <div class="track-name"></div>
+      <div class="track-artist"></div>
+  </div>
+    
+    <div class="buttons">
+        <div class="buttons">
+
+      <div class="prev-track" onclick="prevTrack()">
+
+        <i class="fa fa-step-backward fa-2x"></i>
+
+      </div>
+
+      <div class="playpause-track" onclick="playpauseTrack()">
+
+        <i class="fa fa-play-circle fa-5x"></i>
+
+      </div>
+
+      <div class="next-track" onclick="nextTrack()">
+
+        <i class="fa fa-step-forward fa-2x"></i>
+
+      </div>
+
+    </div>
+    </div>
+    
+    
+  <!--footer-->
+  <div class="footer">
+  <i class="fa fa-music"></i>
+  <i class="fa fa-list"></i>
+  <i class="fa fa-search"></i>
+  <i class="fa fa-heart" onclick="like()"></i>
+   </div>
+   </div>
+   
+ </div>
+<script>
+
+
+
+let now_playing ;
+
+let track_art ;
+
+let track_name ;
+
+let track_artist ;
+ 
+
+let playpause_btn ;
+
+let next_btn;
+
+let prev_btn;
+
+window.onload=function(){
+  now_playing = document.querySelector(".now-playing");
+  track_art = document.querySelector(".track-art");
+  track_name = document.querySelector(".track-name");
+  track_artist = document.querySelector(".track-artist");
+  playpause_btn = document.querySelector(".playpause-track");
+  next_btn = document.querySelector(".next-track")
+  prev_btn = document.querySelector(".prev-track")
+  
+}
+ 
+// Specify globally used values
+let track_index = 0;
+
+let isPlaying = false;
+let updateTimer;
+ 
+// Create the audio element for the player
+
+let curr_track = document.createElement('audio');
+ 
+// Define the list of tracks that have to be played
+let track_list = [
+
+  {
+
+    name: "Lut Gaye",
+
+    artist: "Jubin Nautiyal",
+
+    image: "https://i.ibb.co/LQYm3Y3/MUSIC-Lut-Gaye-Feat-Emraan-Hashmi-1621251348661.jpg",
+
+    path: "https://www.dropbox.com/s/ibplwj00uzc2ih4/lut%20gaye.mp3?dl=1"
+
+  },
+
+  
+
+  {
+
+    name: "Panghat",
+
+    artist: "Divya Kumar, Asees Kaur",
+
+    image: "https://i.ibb.co/TM5M9jF/MUSIC-Panghat-From-1621251280024.jpg",
+
+    path: "https://www.dropbox.com/s/o0h39i5no6ioxye/panghat%20roohi.mp3?dl=1",
+
+  },
+  {
+
+    name: "Care Ni Karda",
+
+    artist: "Yo Yo Honey Singh",
+
+    image: "https://i.ibb.co/crxP9sg/MUSIC-Care-Ni-Karda-From-1621251266590.jpg",
+
+    path: "https://www.dropbox.com/s/9mvvmytxycs3xpy/care%20ni%20karda.mp3?dl=1",
+
+  },
+{
+
+    name: "Nadiyo Paar",
+
+    artist: "Shamur, Sachin-Jigar",
+
+    image: "https://i.ibb.co/mzxTCKN/MUSIC-Nadiyon-Paar-Let-the-Music-Play-Again-From-Roohi-1620866629198.jpg",
+
+    path: "https://www.dropbox.com/s/4i6kl9xa2psw82l/Nadiyon%20Paar%20Let%20the%20Music%20Pl.mp3?dl=1",
+
+  },
+{
+
+    name: "Baarish Ki Jaaye",
+
+    artist: "Bpraak",
+
+    image: "https://i.ibb.co/vc8gg3J/MUSIC-Baarish-Ki-Jaaye-1621251630140.jpg",
+
+    path: "https://www.dropbox.com/s/97lwpo14kgn1zkv/baarish%20ki%20jaaye%20original.mp3?dl=1",
+
+  },
+{
+
+    name: "Bewafa Tera Masoom Chehra",
+
+    artist: "Jubin Nautiyal",
+
+    image: "https://i.ibb.co/kHFyQ9K/MUSIC-Bewafa-Tera-Masoom-Chehra-1621251644668.jpg",
+
+    path: "https://www.dropbox.com/s/kiqrx4qf97eyx9x/bewafa%20tera%20masoom%20chehra.mp3?dl=1",
+
+  },
+{
+
+    name: "Is Qadar",
+
+    artist: "Tulsi Kumar, Darshan Rawal",
+
+    image: "https://i.ibb.co/S5jvT54/MUSIC-Is-Qadar-1621251654166.jpg",
+
+    path: "https://www.dropbox.com/s/a3kefbso33g8n98/is%20qadar.mp3?dl=1",
+
+  },
+{
+
+    name: "Saiyaan Ji",
+
+    artist: "Yo Yo Honey Singh",
+
+    image: "https://i.ibb.co/jRBrFcg/MUSIC-Saiyaan-Ji-Ft-Nushrratt-Bharuccha-1621251691107.jpg",
+
+    path: "https://www.dropbox.com/s/igtxg7y1azi76fn/saiyaan%20ji.mp3?dl=1",
+
+  }
+];
+
+
+
+function main(){
+  document.getElementById("main").style.display="block";
+  document.getElementById("start").style.display="none";  
+loadTrack(0);
+
+}
+function manu(){
+    document.getElementById("manu").style.display="block";
+}
+function clos(){
+document.getElementById("manu").style.display="none";
+}
+function song(x){
+    document.querySelector(".list").style.display="none";
+    
+}
+
+function like(){
+    document.querySelector(".fa-heart").style.color="#FF3399";
+}
+
+function loadTrack(track_index) {
+
+  // Load a new track
+
+  curr_track.src = track_list[track_index].path;
+
+  curr_track.load();
+ 
+
+  // Update details of the track
+  alert(track_list[track_index].image);
+  track_art.style.backgroundImage =   "url(" + track_list[track_index].image + ")";
+
+  track_name.textContent = track_list[track_index].name;
+
+  track_artist.textContent = track_list[track_index].artist;
+
+  now_playing.textContent = 
+     "PLAYING " + (track_index + 1) + " OF " + track_list.length;
+ 
+
+
+
+  // Move to the next track if the current finishes playing
+
+  // using the 'ended' event
+
+  curr_track.addEventListener("ended", nextTrack);
+ 
+}
+
+function playpauseTrack() {
+
+  // Switch between playing and pausing
+
+  // depending on the current state
+
+  if (!isPlaying) playTrack();
+
+  else pauseTrack();
+}
+ 
+
+function playTrack() {
+
+  // Play the loaded track
+
+  curr_track.play();
+
+  isPlaying = true;
+ 
+
+  // Replace icon with the pause icon
+
+  playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-5x"></i>';
+}
+ 
+
+function pauseTrack() {
+
+  // Pause the loaded track
+
+  curr_track.pause();
+
+  isPlaying = false;
+ 
+
+  // Replace icon with the play icon
+
+  playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x"></i>';
+}
+ 
+
+function nextTrack() {
+
+  // Go back to the first track if the
+
+  // current one is the last in the track list
+
+  if (track_index < track_list.length - 1)
+
+    track_index += 1;
+
+  else track_index = 0;
+ 
+
+  // Load and play the new track
+
+  loadTrack(track_index);
+
+  playTrack();
+}
+ 
+
+function prevTrack() {
+
+  // Go back to the last track if the
+
+  // current one is the first in the track list
+
+  if (track_index > 0)
+
+    track_index -= 1;
+
+  else track_index = track_list.length;
+
+   
+
+  // Load and play the new track
+
+  loadTrack(track_index);
+
+  playTrack();
+}
+
+
+</script>
+</body>
+</html>
